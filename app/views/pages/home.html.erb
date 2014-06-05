@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row padded-form">
+      <% if @tasks.empty? %>
+        <span class="text-warning">There are no current tasks.</span>
+      <% else %>
+        <table class="table table-hover.table-bordered">
+          <thead>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Created At</th>
+            <th>Completed?</th>
+            <th>Action</th>
+          </thead>
+
+          <tbody>
+            <% @tasks.each do |task|%>
+              <tr>
+                <td><%= link_to task.title, task_path(task)%></td>
+                <td><%= task.category.category_name %></td>
+                <td><%= task.created_at.strftime('%d %b') %></td>
+                <td><%= task.completed %></td>
+                <td><%= link_to 'Delete', task_path(task), :method => :delete %> |
+                    <%= link_to 'Edit', edit_task_path(task) %> </td>
+              </tr>
+          <% end %>
+          </tbody>
+        </table>
+        <% end %>
+    </div>
+</div>
