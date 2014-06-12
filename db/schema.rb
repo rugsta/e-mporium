@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140612005423) do
+ActiveRecord::Schema.define(version: 20140612014109) do
 
   create_table "categories", force: true do |t|
     t.string   "category_name"
@@ -21,13 +21,13 @@ ActiveRecord::Schema.define(version: 20140612005423) do
   end
 
   create_table "tasks", force: true do |t|
-    t.string   "title"
+    t.string   "product_name"
     t.integer  "category_id"
     t.string   "note"
-    t.boolean  "completed"
+    t.boolean  "archived"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.decimal  "Price",       precision: 8, scale: 2
+    t.decimal  "price"
   end
 
 end
