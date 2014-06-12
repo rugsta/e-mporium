@@ -7,6 +7,8 @@
           <%#= form.collection_select(:category_id, @active_categories, :id, :category_name, { :include_blank => true, :input_html => {:style=> 'width: 300px'}}) %>
           <%= form.input :category_id, :as => :select, :collection => @active_categories.collect { |c| [c.category_name, c.id] }, :input_html => {:style=> 'width: 300px'}%>
           <%= form.input :note, :as => :text, :input_html => {:style=> 'width: 500px; height: 75px'}%>
+          <%#= form.input :image, :as => :file_field %>
+          <%= form.input :price, :input_html => {:maxlength => 30, :style=> 'width: 120px'}%>
           <%= form.input :completed, :as => :boolean, :label => false, :inline_label => 'Completed'%>
           <%= form.button :submit, class: "btn btn-primary"%>
 

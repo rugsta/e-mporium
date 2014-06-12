@@ -15,6 +15,7 @@
               <td><%= @task.title%></td>
               <td><%= @task.category_id%></td>
               <td><%= @task.note%></td>
+              <td><%= @task.price%></td>
               <td><%= @task.completed%></td>
               <td><%= link_to 'Delete', task_path(@task), :method => :delete%> |
                   <%= link_to 'Edit', edit_task_path(@task)%> </td>

@@ -34,7 +34,7 @@ class TasksController < ApplicationController
 
   private
   def task_params
-    params.require(:task).permit(:title, :note, :category_id, :completed)
+    params.require(:task).permit(:title, :note, :category_id, :completed, :price )
   end
 
   def active_categories

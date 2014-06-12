@@ -7,6 +7,7 @@
           <thead>
             <th>Title</th>
             <th>Category</th>
+            <th>Price</th>
             <th>Created At</th>
             <th>Completed?</th>
             <th>Action</th>
@@ -17,6 +18,7 @@
               <tr>
                 <td><%= link_to task.title, task_path(task)%></td>
                 <td><%= task.category.category_name %></td>
+                <td>$<%= task.price %></td>
                 <td><%= task.created_at.strftime('%d %b') %></td>
                 <td><%= task.completed %></td>
                 <td><%= link_to 'Delete', task_path(task), :method => :delete %> |
