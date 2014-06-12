@@ -1,4 +1,4 @@
-class Task < ActiveRecord::Base
+class Product < ActiveRecord::Base
   validates_presence_of  :category_id, :category_name, :note, :product_name, :price
   #validates :product_name, :note, presence: true
 

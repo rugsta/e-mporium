@@ -1,7 +1,7 @@
 Todo::Application.routes.draw do
 
   root to: 'pages#home'
-  resources :tasks
+  resources :products
   resources :categories
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

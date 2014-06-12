@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'rails_refactor'
+
 
 gem 'simple_form', github: 'plataformatec/simple_form'
 

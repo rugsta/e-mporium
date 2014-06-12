@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
 
   def home
-    @tasks = Task.all
+    @products = Product.all
   end
 end

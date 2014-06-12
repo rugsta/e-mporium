@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row padded-form">
-      <% if @tasks.empty? %>
-        <span class="text-warning">There are no current tasks.</span>
+      <% if @products.empty? %>
+        <span class="text-warning">There are no current products to display.</span>
       <% else %>
         <table class="table table-hover.table-bordered">
           <thead>
@@ -14,15 +14,15 @@
           </thead>
 
           <tbody>
-            <% @tasks.each do |task|%>
+            <% @products.each do |product|%>
               <tr>
-                <td><%= link_to task.product_name, task_path(task)%></td>
-                <td><%= task.category.category_name %></td>
-                <td>$<%= task.price %></td>
-                <td><%= task.created_at.strftime('%d %b') %></td>
-                <td><%= task.archived %></td>
-                <td><%= link_to 'Delete', task_path(task), :method => :delete %> |
-                    <%= link_to 'Edit', edit_task_path(task) %> </td>
+                <td><%= link_to product.product_name, product_path(product)%></td>
+                <td><%= product.category.category_name %></td>
+                <td>$<%= product.price %></td>
+                <td><%= product.created_at.strftime('%d %b') %></td>
+                <td><%= product.archived %></td>
+                <td><%= link_to 'Delete', product_path(product), :method => :delete %> |
+                    <%= link_to 'Edit', edit_product_path(product) %> </td>
               </tr>
           <% end %>
           </tbody>
