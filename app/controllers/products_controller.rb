@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 
-  before_filter :active_categories, :only => [:new, :edit]
+  before_filter :active_categories, :only => [:new, :edit, :create, :update]
 
   def new
     @product = Product.new
@@ -8,7 +8,12 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.create(product_params)
-    redirect_to root_path
+    if @product.save
+      redirect_to(root_path)
+    else
+      flash.now[:error] = "Your form has some errors."
+      render :new
+    end
   end
 
   def destroy
@@ -27,8 +32,13 @@ class ProductsController < ApplicationController
 
   def update
     @product = Product.find(params[:id])
-    @product.update(product_params)
-    redirect_to root_path
+
+    if @product.update(product_params)
+      redirect_to root_path
+    else
+      flash.now[:error] = "Your form has some errors."
+      render :edit
+    end
   end
 
 

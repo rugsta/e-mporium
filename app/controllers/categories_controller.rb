@@ -1,27 +1,30 @@
 class CategoriesController < ApplicationController
 
+  before_filter :all_categories, :only => [:index, :create, :edit, :update]
 
   def new
     @category = Category.new
   end
 
   def create
-    @category = Category.create(category_params)
-    redirect_to categories_path
+    @category = Category.new(category_params)
+    if @category.save
+      redirect_to categories_path
+    else
+      render :edit
+    end
   end
 
   def index
-    @categories = Category.all
     new
   end
 
-  def show_categories
+  def all_categories
     @categories = Category.all
   end
 
   def edit
     @category = Category.find(params[:id])
-    @categories = Category.all
   end
 
   def update

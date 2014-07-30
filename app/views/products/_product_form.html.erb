@@ -1,6 +1,14 @@
 <div class="row padded-form">
     <%= simple_form_for(@product) do |form| %>
     <form>
+
+          <% flash.each do |key, error_msg| %>
+              <div class="alert alert-danger">
+                <%= error_msg %>
+              </div>
+          <% end %>
+
+
         <div class="form-group">
 
           <%= form.input :product_name, :input_html => {:maxlength => 30, :style=> 'width: 300px'}%>
