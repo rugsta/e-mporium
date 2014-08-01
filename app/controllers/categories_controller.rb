@@ -7,10 +7,11 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    @category = Category.new(category_params)
+    @category = Category.create(category_params)
     if @category.save
       redirect_to categories_path
     else
+      flash.now[:error] = "Your form has some errors."
       render :edit
     end
   end

@@ -1,0 +1,40 @@
+<div class="container">
+
+    <div class="page-header">
+      <h1>Product header</h1>
+    </div>
+
+
+    <div class="col-md-3">
+      <% @active_categories.each do |c| %>
+          <div class="list-group">
+            <div class="list-group-item"><%= link_to c.category_name, store_path(:category_id => c.id) %></div>
+
+          </div>
+      <% end %>
+    </div>
+
+  <div class="col-md-9">
+
+    <div class="row">
+      <% @products.each do |p|%>
+
+      <div class="col-md-6">
+
+        <div class="thumbnail">
+          <div class="caption">
+            <h3><%= p.product_name %></h3>
+            <p><%= p.note%></p>
+            <p><%= number_to_currency(p.price)%> </p>
+            <p><a href="#" class="btn btn-primary" role="button">Buy Now</a></p>
+          </div>
+        </div>
+
+      </div>
+
+      <%end%>
+   </div>
+
+ </div>
+</div>
+

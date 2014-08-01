@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Todo</title>
+  <title>Products</title>
   <%= stylesheet_link_tag    "application", media: "all"%>
   <%= javascript_include_tag "application"%>
   <%= csrf_meta_tags %>
@@ -12,8 +12,8 @@
     <div class="jumbotron">
       <div>
         <div class="hero-unit">
-             <h1>ToDo</h1>
-            <p>Welcome to my ToDo application</p>
+             <h1>Products</h1>
+            <p>Welcome to products application</p>
         </div>
       </div>
     </div>
@@ -21,9 +21,9 @@
     <div class="span10 offset1 offset1">
       <div>
         <ul class="nav nav-pills">
-          <li><%= link_to "Products List", root_path%></li>
+          <li><%= link_to "Products List", products_index_path%></li>
           <li><%= link_to 'Add Product', new_product_path%></li>
-          <li><%= link_to 'Categories', categories_path%></li>
+          <li><%= link_to 'Categories', categories_index_path%></li>
         </ul>
       </div>
     </div>
