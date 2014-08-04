@@ -5,10 +5,12 @@ Todo::Application.routes.draw do
   get 'products/index'
   get 'categories/index'
   get 'store/index'
+  get 'users/index'
 
   resources :products
   resources :categories
   resources :store
+  resources :users
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -2,8 +2,6 @@ class StoreController < ApplicationController
 
   def index
 
-
-
     if params[:category_id]
       @products = Product.where(:category_id => params[:category_id])
       @active_categories = Category.where('active' => true).all

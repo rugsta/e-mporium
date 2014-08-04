@@ -1,0 +1,42 @@
+<%= render "/layouts/flash_error"%>
+
+<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+  <table class="table table-hover.table-bordered">
+    <thead>
+    <th>User Name</th>
+    <th>Email</th>
+    <th>Action</th>
+    </thead>
+
+    <tbody>
+    <% @users.each do |user|%>
+        <tr>
+          <td><%= user.name%></td>
+          <td><%= user.email %></td>
+          <td><%= link_to 'Delete', user_path(user), :method => :delete %> |
+            <%= link_to 'Reset Pwd', edit_user_path(user) %> </td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+  <h4>Add User</h4>
+  <%= simple_form_for(@user) do |form| %>
+
+      <form>
+        <div class="form-group">
+
+          <%= form.input :name, :input_html => {:maxlength => 30, :style=> 'width: 300px'}%>
+          <%= form.input :email, :input_html => {:maxlength => 255, :style=> 'width: 300px'}%>
+          <%= form.input :password, :as => :password, :input_html => {:maxlength => 255, :style=> 'width: 300px'} %>
+          <%= form.input :password_confirmation, :as => :password, :label => 'Password Confirmation', :input_html => {:maxlength => 255, :style=> 'width: 300px'} %>
+          <%= form.button :submit, class: "btn btn-primary"%>
+
+        </div>
+      </form>
+  <% end %>
+</div>
+
+
