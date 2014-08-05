@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+  @change_pwd = false
   before_filter :all_users, :only => [:index, :create, :edit, :update]
 
   def new
@@ -17,7 +18,7 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     if @user.save
-      redirect_to(user_index_path)
+      redirect_to(users_index_path)
     else
       flash.now[:error] = "Your form has some errors."
       render :index
@@ -25,11 +26,32 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @change_pwd = true
     @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+
+    if @user.update(user_params)
+      redirect_to(users_index_path)
+    else
+      flash.now[:error] = "Your form has some errors."
+      @change_pwd = true
+      render :edit
+    end
+  end
+
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to(users_index_path)
+
   end
 
   private
   def user_params
-    params.require(:user).permit(:name, :email, :password )
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 end

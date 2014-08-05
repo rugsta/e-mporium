@@ -1,6 +1,6 @@
 <%= render "/layouts/flash_error"%>
 
-<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
   <table class="table table-hover.table-bordered">
     <thead>
     <th>User Name</th>
@@ -21,17 +21,27 @@
   </table>
 </div>
 
-<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-  <h4>Add User</h4>
+<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+  <% if @change_pwd %>
+       <h4>Reset User Password</h4>
+  <% else %>
+       <h4>Add User</h4>
+  <% end %>
   <%= simple_form_for(@user) do |form| %>
 
       <form>
         <div class="form-group">
 
-          <%= form.input :name, :input_html => {:maxlength => 30, :style=> 'width: 300px'}%>
-          <%= form.input :email, :input_html => {:maxlength => 255, :style=> 'width: 300px'}%>
-          <%= form.input :password, :as => :password, :input_html => {:maxlength => 255, :style=> 'width: 300px'} %>
-          <%= form.input :password_confirmation, :as => :password, :label => 'Password Confirmation', :input_html => {:maxlength => 255, :style=> 'width: 300px'} %>
+          <% if @change_pwd %>
+            <%= form.input :name, :readonly => true, :input_html => {:maxlength => 50, :style=> 'width: 250px'}%>
+            <%= form.input :email, :readonly => true, :input_html => {:maxlength => 255, :style=> 'width: 250px'}%>
+          <% else %>
+            <%= form.input :name, :input_html => {:maxlength => 50, :style=> 'width: 250px'}%>
+            <%= form.input :email, :input_html => {:maxlength => 255, :style=> 'width: 250px'}%>
+          <% end %>
+
+          <%= form.input :password, :as => :password, :input_html => {:maxlength => 255, :style=> 'width: 250px'} %>
+          <%= form.input :password_confirmation, :as => :password, :label => 'Password Confirmation', :input_html => {:maxlength => 255, :style=> 'width: 250px'} %>
           <%= form.button :submit, class: "btn btn-primary"%>
 
         </div>
