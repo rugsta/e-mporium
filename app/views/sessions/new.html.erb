@@ -1,0 +1,16 @@
+<%= render "/layouts/flash_error"%>
+
+
+<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+
+<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+  <h3>Hello, log in?</h3>
+
+    <%=simple_form_for :sessions, :url => sessions_path do |login|%>
+
+      <%= login.input :email, :input_html => {:maxlength => 50, :style=> 'width: 250px'} %>
+      <%= login.input :password, :input_html => {:maxlength => 255, :style=> 'width: 250px'}%>
+      <%= login.submit "Enter", class: "btn btn-primary"%>
+    <% end %>
+
+</div>

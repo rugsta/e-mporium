@@ -1,0 +1,14 @@
+<div class="span10 offset1 offset1">
+
+    <ul class="nav nav-pills">
+      <li><%= link_to 'Add Product', new_product_path%></li>
+      <li><%= link_to "Products", products_index_path%></li>
+      <li><%= link_to 'Categories', categories_index_path%></li>
+      <li><%= link_to 'Users', users_index_path%></li>
+      <li class="inline-nav-user">Current User : <%= session[:name] %></li>
+      <li><%= link_to 'Log Out', store_path%></li>
+    </ul>
+
+</div>
+
+<div class="row"><br></div>

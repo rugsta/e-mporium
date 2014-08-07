@@ -12,5 +12,12 @@
  *= require_tree .
  */
 
+.inline-nav-user
+{
+    line-height: 2.8;
+    font-weight: bold;
+    margin-left: 40px;
+}
+
 
 
