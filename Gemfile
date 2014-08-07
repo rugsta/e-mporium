@@ -6,7 +6,9 @@ gem 'rails_refactor'
 gem 'simple_form', github: 'plataformatec/simple_form'
 gem 'bcrypt'
 gem 'bcrypt-ruby'
-
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0'
+end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.3'

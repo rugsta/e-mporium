@@ -14,14 +14,14 @@ class SessionsController < ApplicationController
     user = User.find_by(:email => params[:sessions][:email])
 
     if user.nil?
-      flash[:error] = "Invalid email and/or password"
+      flash[:error] = "Invalid email and/or password."
       redirect_to(new_session_path)
     elsif user and user.authenticate(params[:sessions][:password])
       session[:user_id] = user.id
       session[:name] = user.name
-      flash[:error] = "Invalid email and/or password"
       redirect_to(products_index_path)
     else
+      flash[:error] = "Invalid email and/or password."
       redirect_to(new_session_path)
     end
   end
