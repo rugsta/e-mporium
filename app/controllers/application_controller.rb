@@ -9,8 +9,8 @@ class ApplicationController < ActionController::Base
 
   def authorize
     #require 'ruby-debug';debugger
-    unless User.find_by(session[:id])
-      flash.now[:error] = "Unauthorised path. Please log in."
+    if session[:user_id].to_i < 1
+      flash[:error] = "Unauthorised path. Please log in."
       redirect_to(new_session_path)
     end
   end
