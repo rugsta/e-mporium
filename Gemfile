@@ -5,9 +5,19 @@ gem 'rails_refactor'
 
 gem 'simple_form', github: 'plataformatec/simple_form'
 gem 'bcrypt'
+
 gem 'bcrypt-ruby'
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
+  gem 'rspec-collection_matchers'
+  gem 'factory_girl_rails'
+end
+
+group :test do
+  gem 'faker'
+  gem 'capybara'
+  gem 'guard-rspec'
+  gem 'launchy'
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
