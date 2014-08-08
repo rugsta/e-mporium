@@ -3,20 +3,12 @@ require 'spec_helper'
 
 describe Category do
 
-  before :each do
-    @category = Category.new(
-        :category_name => "new category",
-        :active => true)
-  end
-
-
   it 'is valid with name and active status' do
-    expect(@category).to be_valid
+    expect(FactoryGirl.build(:category)).to be_valid
   end
 
   it 'is invalid without a name' do
-    @category.category_name = nil
-    expect(@category).to be_invalid
+    expect(FactoryGirl.build(:category, category_name: nil)).to be_invalid
   end
 
 end
