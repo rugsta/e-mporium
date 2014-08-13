@@ -1,6 +1,5 @@
 require 'spec_helper'
 
-
 describe Category do
 
   it 'is valid with name and active status' do

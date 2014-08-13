@@ -30,8 +30,13 @@ class CategoriesController < ApplicationController
 
   def update
     @category = Category.find(params[:id])
-    @category.update(category_params)
-    redirect_to categories_path
+
+    if @category.update(category_params)
+      redirect_to categories_path
+    else
+      flash[:error] = "Your form has some errors."
+      render :edit
+    end
   end
 
   def destroy

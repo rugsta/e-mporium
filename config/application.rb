@@ -6,11 +6,8 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
 
-
-
 module Todo
   class Application < Rails::Application
-
 
     config.generators do |g|
       g.test_framework :rspec,
@@ -21,7 +18,6 @@ module Todo
       :controller_specs => true,
       :request_specs => true
       g.fixture_replacement :factory_girl, :dir => "spec/factories"
-
     end
 
     # Settings in config/environments/* take precedence over those specified here.

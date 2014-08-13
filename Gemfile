@@ -8,7 +8,7 @@ gem 'bcrypt'
 
 gem 'bcrypt-ruby'
 group :development, :test do
-  gem 'rspec-rails', '~> 3.0.0'
+  gem 'rspec-rails', '~> 2.0'
   gem 'rspec-collection_matchers'
   gem 'factory_girl_rails'
 end
@@ -16,12 +16,11 @@ end
 group :test do
   gem 'faker'
   gem 'capybara'
-  gem 'guard-rspec'
   gem 'launchy'
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.3'
+gem 'rails', '4.1.0'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'

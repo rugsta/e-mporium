@@ -19,11 +19,11 @@ describe User do
   end
 
   it "is invalid without a password confirmation" do
-    expect(FactoryGirl.build(:user, password_confirmation: nil)).to be_invalid
+    expect(FactoryGirl.build(:user, password_confirmation: "")).to be_invalid
   end
 
   it "is invalid without a matching password confirmation " do
-    expect(FactoryGirl.build(:user, password_confirmation: "not_qwerty")).to be_invalid
+    expect(FactoryGirl.build(:user, password_confirmation: "unknown_password")).to be_invalid
   end
 
   it "it always has a lower case email" do
