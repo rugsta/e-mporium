@@ -26,9 +26,13 @@ describe User do
     expect(FactoryGirl.build(:user, password_confirmation: "unknown_password")).to be_invalid
   end
 
-  it "it always has a lower case email" do
+  it "always has a lower case email" do
     user= FactoryGirl.create(:user, email: "UPPERCASE@UPPER.XXX")
     expect(user.email).to match("uppercase@upper.xxx")
+  end
+
+  it "always has a valid email format" do
+    expect(FactoryGirl.build(:user, email: "this_is_not_an_email_address.com")).to be_invalid
   end
 
 
