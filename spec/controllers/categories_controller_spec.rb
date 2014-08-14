@@ -86,7 +86,6 @@ describe CategoriesController do
     end
   end
 
-
   describe "DELETE #destroy" do
     it "deletes a category from the database" do
       saved_category =FactoryGirl.create(:category_active)
