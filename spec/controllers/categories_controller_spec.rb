@@ -89,7 +89,17 @@ describe CategoriesController do
 
   describe "DELETE #destroy" do
     it "deletes a category from the database" do
-      pending
+      saved_category =FactoryGirl.create(:category_active)
+      FactoryGirl.create(:category_inactive)
+
+      delete :destroy, :id => saved_category.id
+      expect(Category.count).to eq(1)
+    end
+
+    it 'renders the categories#index' do
+      saved_category =FactoryGirl.create(:category_active)
+      delete :destroy, :id => saved_category.id
+      expect(response).to redirect_to(categories_path)
     end
   end
 
