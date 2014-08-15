@@ -6,27 +6,6 @@ describe CategoriesController do
     session[:user_id] = 1
   end
 
-  describe "Authorise" do
-
-    context "when user is un-authorised" do
-      it "redirects when the user id is invalid" do
-        session[:user_id] = -1
-        get :index
-        expect(response.status).to eq(302 )
-      end
-
-    end
-
-    context "when user is authorised" do
-      it "renders the index page" do
-        get :index
-        expect(response.status).to eq(200)
-      end
-
-    end
-  end
-
-
   describe "GET #index" do
     it "renders the :index view" do
       get :index
