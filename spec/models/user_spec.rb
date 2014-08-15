@@ -35,6 +35,10 @@ describe User do
     expect(FactoryGirl.build(:user, email: "this_is_not_an_email_address.com")).to be_invalid
   end
 
-
+  it "requires a unique email address" do
+    FactoryGirl.create(:user)
+    user2 = FactoryGirl.build(:user)
+    expect{user2.save!}.to raise_error(ActiveRecord::RecordInvalid,'Validation failed: Email has already been taken')
+  end
 
 end
