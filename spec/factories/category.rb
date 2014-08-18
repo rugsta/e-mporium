@@ -1,7 +1,7 @@
 FactoryGirl.define do
 
   factory :category do |category|
-    category.category_name "Factory Girl Category Default"
+    category.category_name "FG Default Category"
     category.active true
   end
 
@@ -10,12 +10,12 @@ FactoryGirl.define do
   end
 
   factory :category_active, parent: :category do |category|
-    category.category_name "Factory Girl Category Active"
+    category.category_name "FG Active Category "
     category.active true
   end
 
   factory :category_inactive, parent: :category do |category|
-    category.category_name "Factory Girl Category Inactive"
+    category.category_name "FG Inactive Category"
     category.active false
   end
 end
