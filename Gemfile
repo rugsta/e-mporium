@@ -5,6 +5,7 @@ gem 'rails_refactor'
 
 gem 'simple_form', github: 'plataformatec/simple_form'
 gem 'bcrypt'
+gem 'pry'
 
 gem 'bcrypt-ruby'
 group :development, :test do
@@ -15,16 +16,19 @@ end
 
 group :test do
   gem 'faker'
-  gem "database_cleaner"
   gem 'capybara'
   gem 'launchy'
+  gem 'selenium-webdriver'
+  gem 'database_cleaner'
 end
+
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# Use ////sqlite3///// postgres as the database for Active Record
+gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

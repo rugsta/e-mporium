@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140801033750) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "categories", force: true do |t|
     t.string   "category_name"
     t.boolean  "active",        default: true
@@ -28,6 +31,16 @@ ActiveRecord::Schema.define(version: 20140801033750) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.decimal  "price"
+  end
+
+  create_table "tasks", force: true do |t|
+    t.string   "product_name"
+    t.integer  "category_id"
+    t.string   "note"
+    t.boolean  "archived"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.decimal  "price",        precision: 8, scale: 2
   end
 
   create_table "users", force: true do |t|
