@@ -1,5 +1,9 @@
 FactoryGirl.define do
-  factory :session do |session|
-    session.id = 1
+
+  def session_credentials(session=nil)
+    session ||= FactoryGirl.create(:session)
   end
+
 end
+
+

@@ -12,8 +12,8 @@
     <tbody>
     <% @categories.each do |c| %>
     <tr>
-      <td><%= c.category_name%></td>
-      <td><%= c.active%></td>
+      <td id="category_name"><%= c.category_name%></td>
+      <td id="category_active"><%= c.active%></td>
       <td><%= link_to 'Delete', category_path(c), :method => :delete%> |
           <%= link_to 'Edit', edit_category_path(c)%> </td>
     </tr>
