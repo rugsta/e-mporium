@@ -19,12 +19,12 @@ describe 'FEATURE manage categories', js: true do
     click_link('Categories')
     click_link('Edit')
 
-    expect(page).to have_selector("input[value='FG Default Category']")
+    expect(page).to have_selector("input[value='FG Active Category']")
 
-    fill_in('Category name', :with => "UPDATED FG Default Category")
+    fill_in('Category name', :with => "UPDATED FG Active Category")
     click_button('Update Category')
 
-    expect(page).to have_css("#category_name", :text => "UPDATED FG Default Category")
+    expect(page).to have_css("#category_name", :text => "UPDATED FG Active Category")
   end
 
   it 'allows deleting of a category' do

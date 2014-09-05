@@ -10,15 +10,15 @@ describe StoreController do
     end
 
     it 'renders products' do
-      category = FactoryGirl.create(:category_active)
-      product = FactoryGirl.create(:product)
+      FactoryGirl.create(:category, :id => 1)
+      product = FactoryGirl.create(:product, :with_id)
       get :index
       expect(assigns(:products)).to match_array([product])
     end
 
     it 'only renders active categories' do
-      category_active = FactoryGirl.create(:category_active)
-      category_inactive = FactoryGirl.create(:category_inactive)
+      category_active = FactoryGirl.create(:category)
+      category_inactive = FactoryGirl.create(:category, :inactive)
       get :index
       expect(assigns(:active_categories)).to match_array([category_active])
     end

@@ -5,7 +5,7 @@ require 'rspec/rails'
 require 'rspec/autorun'
 require 'capybara/rspec'
 require 'pry'
-
+require 'rack_session_access/capybara'
 
 
 

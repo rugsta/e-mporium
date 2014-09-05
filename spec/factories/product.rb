@@ -1,8 +1,17 @@
 FactoryGirl.define do
-  factory :product do |product|
-    product.product_name "Factory Girl Created Product"
-    product.category_id "1"
-    product.note "This is a note from Factory Girl"
-    product.price "19.99"
+  sequence :product_name do |n|
+    "Factory Girl Created Product #{n}"
   end
+
+  factory :product do
+    product_name { generate(:product_name)}
+    note "This is a note from Factory Girl"
+    price "19.99"
+    category
+  end
+
+  trait :with_id do
+    category_id 1
+  end
+
 end
