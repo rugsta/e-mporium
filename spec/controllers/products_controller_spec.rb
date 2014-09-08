@@ -35,12 +35,6 @@ describe ProductsController do
   end
 
   describe "POST #create" do
-    #it "saves a product with valid attributes" do
-    #  to_match_product = FactoryGirl.build(:product, :with_id)
-    #  post :create, product: FactoryGirl.attributes_for(:product)
-    #  expect(Product.first.product_name).to eql(to_match_product.product_name)
-    #end
-
 
     it "saves a product with valid attributes" do
       to_match_product = FactoryGirl.build(:product, :with_id)

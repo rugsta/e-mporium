@@ -21,10 +21,11 @@
 
       <div class="col-md-6">
 
-        <div class="thumbnail">
+        <div class="thumbnail"><%= image_tag p.image1.url(:thumb) %>
           <div class="caption" id="product_description">
             <h3><%= p.product_name %></h3>
             <p><%= p.note%></p>
+
             <p><%= number_to_currency(p.price)%> </p>
             <p><a href="#" class="btn btn-primary" role="button">Buy Now</a></p>
           </div>

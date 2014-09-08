@@ -23,6 +23,8 @@ group :test do
 end
 
 
+gem 'rmagick', '2.13.2'
+gem 'paperclip', '~> 4.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
