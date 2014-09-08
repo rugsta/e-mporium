@@ -1,21 +1,29 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+An e-commerce shopping app. Done before buy no by me.
+An investigation into learning rails, ruby, configuring CI and deployment servers.
+The application will utilise thie software testing that as a tester I expect from
+the developers I work with. Controller, Model and Feature specs.
+Some testers like cucumber.
+I hate it but appreciate its 'possiblities' if used as expected in an organisation.
+Because of this it will have an end to end smoke test wirtten with cucumber.
+I'm a software tester not a developer, this project is for personal development.
+I'm hoping the code does not make any developer naucious.
 
 * Ruby version
+Uses : Ruby 2.1.1p76
+Uses : Rails 4.1.0
 
 * System dependencies
 
 * Configuration
 
-* Database creation
+Uses Postgres
 
 * Database initialization
 
 * How to run the test suite
+Uses rspec
 
 * Services (job queues, cache servers, search engines, etc.)
 
