@@ -8,7 +8,7 @@ Some testers like cucumber.
 I hate it but appreciate its 'possiblities' if used as expected in an organisation.
 Because of this it will have an end to end smoke test wirtten with cucumber.
 I'm a software tester not a developer, this project is for personal development.
-I'm hoping the code does not make any developer naucious.
+I'm hoping the code does not make any developer nauseous.
 
 * Ruby version
 Uses : Ruby 2.1.1p76
