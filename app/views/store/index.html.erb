@@ -17,11 +17,17 @@
   <div class="col-md-9">
 
     <div class="row">
-      <% @products.each do |p|%>
+      <% @products.each do |p| %>
 
       <div class="col-md-6">
 
-        <div class="thumbnail"><%= image_tag p.image1.url(:thumb) %>
+
+        <div class="thumb">
+
+
+              <%= image_tag(p.images.first.image.url(:thumb)) if p.images.size > 0  %>
+
+
           <div class="caption" id="product_description">
             <h3><%= p.product_name %></h3>
             <p><%= p.note%></p>

@@ -12,6 +12,7 @@ Todo::Application.routes.draw do
   resources :store
   resources :users
   resources :sessions
+  resources :images, only: [:edit, :update, :destroy]
 
 
   # The priority is based upon order of creation: first created -> highest priority.
