@@ -11,7 +11,7 @@ class ImagesController < ApplicationController
     FileUtils.remove_dir "#{Rails.root}/public/system/images/#{@image.id}"
     @image.delete
 
-    redirect_to(edit_product_path)
+    redirect_to edit_product_path(@image.product_id)
   end
 
 

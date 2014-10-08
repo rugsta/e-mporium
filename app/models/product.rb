@@ -6,7 +6,6 @@ class Product < ActiveRecord::Base
   belongs_to :category
 
   has_many :images, :dependent => :destroy
-  #accepts_nested_attributes_for :images, reject_if: proc { |image| image[:image_file_name].blank? }
   accepts_nested_attributes_for :images
 
 end

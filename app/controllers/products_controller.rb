@@ -42,26 +42,28 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
 
-    if @product.update(product_params)
+    #splits the product and image, strips the image of blanks and reformats
+    params = product_params
+    images_attributes = params.select{|k,v| k == "images_attributes"}
+
+    if images_attributes != {}
+      params = params.select{|k,v| k != "images_attributes"}
+      params = params.merge("images_attributes" => images_attributes["images_attributes"].select {|k,v| v != {}})
+    end
+
+
+    if @product.update(params)
       redirect_to(edit_product_path)
     else
       flash.now[:error] = "Your form has some errors."
       render :edit
     end
 
-    #if @product.images.last([:image_file_name].blank?)
-    #  @product.update(product_params_no_image)
-    #end
-    #
-    #binding.pry
+
   end
 
 
   private
-
-  def product_params_no_image
-    params.require(:product).permit(:product_name, :note, :category_id, :archived, :price, images_attributes: [:image] )
-  end
 
   def product_params
     params.require(:product).permit(:product_name, :note, :category_id, :archived, :price, images_attributes: [:image] )

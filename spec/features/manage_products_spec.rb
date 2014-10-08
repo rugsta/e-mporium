@@ -25,6 +25,7 @@ describe 'FEATURE manage products', js: true do
     click_link('Edit')
     fill_in('Product name', :with => 'new product')
     click_button('Update Product')
+    click_link('Products')
 
     expect(page).to have_selector(:link, 'new product')
   end

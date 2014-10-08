@@ -6,6 +6,7 @@ gem 'rails_refactor'
 gem 'simple_form', github: 'plataformatec/simple_form'
 gem 'bcrypt'
 gem 'pry'
+gem 'pry-byebug'
 
 gem 'bcrypt-ruby'
 group :development, :test do

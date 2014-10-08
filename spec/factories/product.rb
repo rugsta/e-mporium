@@ -8,6 +8,10 @@ FactoryGirl.define do
     note "This is a note from Factory Girl"
     price "19.99"
     category
+    #association :image, factory: :image
+    after(:product) do |i|
+      i.images << FactoryGirl.build(:image)
+      end
   end
 
   trait :with_id do
