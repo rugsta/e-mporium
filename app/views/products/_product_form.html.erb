@@ -1,37 +1,49 @@
 <%= render "/layouts/flash_error"%>
 <%= render "/layouts/admin_navigation"%>
 
-<div class="row padded-form">
+<div class="row padded-form" style="float:left; margin-left: -40px;">
     <%= simple_form_for @product, :html => { :multipart => true } do |form| %>
     <form>
 
-        <div class="form-group">
+        <div class="container" style="width:750px;">
+          <div class="col-md-6 form-group">
+            <%= form.input :product_name, :input_html => {:maxlength => 30, :style=> 'width: 300px'}%>
+            <%= form.input :price, :input_html => {:maxlength => 30, :style=> 'width: 120px'}%>
+          </div>
 
-          <%= form.input :product_name, :input_html => {:maxlength => 30, :style=> 'width: 300px'}%>
-          <%#= form.collection_select(:category_id, @active_categories, :id, :category_name, { :include_blank => true, :input_html => {:style=> 'width: 300px'}}) %>
-          <%= form.input :category_id, :as => :select, :collection => @active_categories.collect { |c| [c.category_name, c.id] }, :input_html => {:style=> 'width: 300px'}%>
-          <%= form.input :note, :as => :text, :input_html => {:style=> 'width: 500px; height: 75px'}%>
-          <%#= form.input :image, :as => :file_field %>
-          <%= form.input :price, :input_html => {:maxlength => 30, :style=> 'width: 120px'}%>
-          <%= form.label :image1, "Image Upload"%>
-          <%= form.fields_for :images do |image| %>
+          <div class="col-md-6 form-group">
+            <%#= form.collection_select(:category_id, @active_categories, :id, :category_name, { :include_blank => true, :input_html => {:style=> 'width: 300px'}}) %>
+            <%= form.input :category_id, :as => :select, :collection => @active_categories.collect { |c| [c.category_name, c.id] }, :input_html => {:style=> 'width: 300px'}%>
+            <%= form.input :archived, :as => :boolean, :label => false, :inline_label => 'Archive this product'%>
+          </div>
+
+          <div class="col-md-12 form-group">
+            <%= form.input :note, :as => :text, :input_html => {:style=> 'width: 660px; height: 75px'}%>
+
+            <%#= form.input :image, :as => :file_field %>
+            <%= form.label :image1, "Image Upload"%> <br>
+            <%= form.fields_for :images do |image| %>
 
               <% if image.object.new_record? %>
-                  <%= image.file_field :image %>
-
+                  <div class="col-md-12 form-group" style="margin:0px;">
+                    <%= image.file_field :image %>
+                  </div>
               <% else %>
 
-                  <div class="thumbnail">
+                  <div class="thumbnail" style="width:120px;float:left; margin: 0px 15px 15px 0px;">
                     <%= image_tag(image.object.image.url(:mini_thumb)) %>
                     <%= link_to 'Delete', image_path(image.object.id), :method => :delete%>
                   </div>
 
                <% end %>
 
-          <% end %><br>
+            <% end %><br>
+          </div>
 
-          <%= form.input :archived, :as => :boolean, :label => false, :inline_label => 'Archived'%>
-          <%= form.button :submit, class: "btn btn-primary"%>
+         <div class="col-md-12 form-group"><br>
+            <%= form.button :submit, class: "btn btn-primary"%>
+         </div>
+
 
         </div>
     </form>

@@ -1,4 +1,5 @@
 class Image < ActiveRecord::Base
+  validates_presence_of :image_file_name, :product_id
   belongs_to :product
 
   has_attached_file :image,

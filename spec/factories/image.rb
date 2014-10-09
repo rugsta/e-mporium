@@ -7,6 +7,7 @@ FactoryGirl.define do
     image_file_name "dave.jpg"
     image_content_type "image/png"
     image_file_size 382357
+    image File.new(Rails.root + 'app/assets/images/rails.png')
   end
 
 end
