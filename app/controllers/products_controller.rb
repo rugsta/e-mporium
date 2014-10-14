@@ -51,15 +51,12 @@ class ProductsController < ApplicationController
       params = params.merge("images_attributes" => images_attributes["images_attributes"].select {|k,v| v != {}})
     end
 
-
     if @product.update(params)
       redirect_to(edit_product_path)
     else
       flash.now[:error] = "Your form has some errors."
       render :edit
     end
-
-
   end
 
 
