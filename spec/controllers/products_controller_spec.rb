@@ -42,7 +42,6 @@ describe ProductsController do
       expect(Product.first.note).to eql(to_match_product.note)
     end
 
-
     it "does not save a product with invalid attributes" do
       to_match_product = FactoryGirl.build(:product)
       post :create, product: FactoryGirl.attributes_for(:product, :with_id, :product_name => "")
