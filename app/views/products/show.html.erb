@@ -14,7 +14,7 @@
             <tr>
               <td><%= @product.product_name%></td>
               <td><%= @product.category_id%></td>
-              <td><%= @product.note%></td>
+              <td><%= simple_format(h(@product.note))%></td>
               <td><%= @product.price%></td>
               <td><%= @product.archived%></td>
               <td><%= link_to 'Delete', product_path(@product), :method => :delete%> |

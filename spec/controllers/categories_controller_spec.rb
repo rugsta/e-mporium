@@ -68,10 +68,10 @@ describe CategoriesController do
   describe "DELETE #destroy" do
     it "deletes a category from the database" do
       saved_category =FactoryGirl.create(:category)
-      FactoryGirl.create(:category, :inactive)
+      FactoryGirl.create(:category)
 
       delete :destroy, :id => saved_category.id
-      expect(Category.count).to eq(1)
+      expect(Category.first.active).to eq(false)
     end
 
     it 'renders the categories#index' do

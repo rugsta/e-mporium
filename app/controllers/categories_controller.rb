@@ -40,7 +40,10 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
-    Category.find(params[:id]).destroy
+    category = Category.find(params[:id])
+    category.active = false
+    category.save!
+
     redirect_to categories_path
   end
 

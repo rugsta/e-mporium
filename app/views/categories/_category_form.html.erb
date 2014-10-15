@@ -14,7 +14,7 @@
     <tr>
       <td id="category_name"><%= c.category_name%></td>
       <td id="category_active"><%= c.active%></td>
-      <td><%= link_to 'Delete', category_path(c), :method => :delete%> |
+      <td><%= link_to 'Inactivate', category_path(c), :method => :delete%> |
           <%= link_to 'Edit', edit_category_path(c)%> </td>
     </tr>
     <% end %>

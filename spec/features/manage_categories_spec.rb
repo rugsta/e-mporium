@@ -32,8 +32,8 @@ describe 'FEATURE manage categories', js: true do
 
     login
     click_link('Categories')
-    click_link('Delete')
+    click_link('Inactivate')
 
-    expect(page).not_to have_selector("input[value='FG Default Category']")
+    expect(page).to have_css("#category_active", :text => "false")
   end
 end
