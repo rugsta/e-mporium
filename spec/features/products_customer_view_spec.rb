@@ -16,6 +16,7 @@ describe 'FEATURE: Store Front', js: true do
     expect(page).to have_link('Active Cat 2')
     expect(page).to have_css('#product_description', :text => 'Factory Girl Created Product 1')
     expect(page).to have_css('#product_description', :text => 'Factory Girl Created Product 2')
+    #TODO expect(page).to have image
   end
 
   it 'does not allow customers to see inactive products and categories' do

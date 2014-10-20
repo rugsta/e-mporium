@@ -15,6 +15,7 @@ describe 'FEATURE manage products', js: true do
     click_button('Create Product')
 
     expect(page).to have_selector(:link, 'new product')
+    #TODO expect(page).to have image
   end
 
   it 'allows editing of products' do
