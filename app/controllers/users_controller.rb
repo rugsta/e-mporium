@@ -18,7 +18,7 @@
   def create
     @user = User.create(user_params)
     if @user.save
-      redirect_to(users_index_path)
+      redirect_to(users_path)
     else
       flash.now[:error] = "Your form has some errors."
       render :index
@@ -34,7 +34,7 @@
     @user = User.find(params[:id])
 
     if @user.update(user_params)
-      redirect_to(users_index_path)
+      redirect_to(users_path)
     else
       flash.now[:error] = "Your form has some errors."
       @change_pwd = true
@@ -45,7 +45,7 @@
   def destroy
     @user = User.find(params[:id])
     @user.delete
-    redirect_to(users_index_path)
+    redirect_to(users_path)
   end
 
   private
