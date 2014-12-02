@@ -44,7 +44,7 @@ class CategoriesController < ApplicationController
     category.active = false
     category.save!
 
-    redirect_to category_path
+    redirect_to categories_path
   end
 
   private
