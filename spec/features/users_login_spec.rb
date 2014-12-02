@@ -24,5 +24,13 @@ describe 'FEATURE login', js: true do
     expect(page).to have_css('.alert.alert-danger', :text => "Invalid email and/or password.")
   end
 
+  it 'lets users log out' do
+    login
+
+    click_link('Log Out')
+    expect(page).not_to have_css('.inline-nav-user', :text => "Current User : ")
+
+  end
+
 end
 
