@@ -7,10 +7,11 @@ class StoreController < ApplicationController
     if params[:category_id]
       @products = Product.where(:category_id => params[:category_id])
       @active_categories = Category.where('active' => true).all
+      @images = Image.all
     else
       @products = Product.joins(:category).where(:categories => {:active => true}).order(:category_id)
       @active_categories = Category.where('active' => true).all
-
+      @images = Image.all
     end
 
     #either params on index

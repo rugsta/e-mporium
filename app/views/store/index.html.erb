@@ -24,9 +24,20 @@
 
         <div class="thumb">
 
+          <% imageArray = Array.new
+             x = 0
+             @images.where(:product_id => p.id).each do |pimage|
+                imageArray << pimage
+             end
+          %>
+          <%  while x < imageArray.length do%>
+            <a href="<%= imageArray[x].image.url(:retina) %>" data-lightbox="Product_<%= p.id %>">
 
-              <%= image_tag(p.images.first.image.url(:thumb)) if p.images.size > 0  %>
 
+               <%= image_tag(imageArray[x].image.url(:mini_thumb)) %>
+
+          <%   x = x +1
+               end %> </a>
 
           <div class="caption" id="product_description">
             <h3><%= p.product_name %></h3>

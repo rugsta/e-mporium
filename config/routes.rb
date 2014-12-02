@@ -2,10 +2,6 @@ Todo::Application.routes.draw do
 
 
   root 'store#index', as: 'store'
-  get 'products/index'
-  get 'categories/index'
-  get 'store/index'
-  get 'users/index'
 
   resources :products
   resources :categories
