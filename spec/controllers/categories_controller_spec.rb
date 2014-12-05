@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe CategoriesController do
+describe Admin::CategoriesController do
 
   before(:each) do
     session[:user_id] = 1
@@ -77,7 +77,7 @@ describe CategoriesController do
     it 'renders the categories#index' do
       saved_category =FactoryGirl.create(:category)
       delete :destroy, :id => saved_category.id
-      expect(response).to redirect_to(categories_path)
+      expect(response).to redirect_to(admin_categories_path)
     end
   end
 

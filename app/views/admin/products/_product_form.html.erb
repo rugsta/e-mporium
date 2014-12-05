@@ -2,7 +2,8 @@
 <%= render "/layouts/admin_navigation"%>
 
 <div class="row padded-form" style="float:left; margin-left: -40px;">
-    <%= simple_form_for @product, :html => { :multipart => true } do |form| %>
+    <!--Because products is namespaced, simple_form needs helping out as the the url and path to post to.-->
+    <%= simple_form_for @product, url: admin_products_path, :html => { :multipart => true, :method => :POST } do |form| %>
     <form>
 
         <div class="container" style="width:750px;">
@@ -32,7 +33,7 @@
 
                   <div class="thumbnail" style="width:120px;float:left; margin: 0px 15px 15px 0px;">
                     <%= image_tag(image.object.image.url(:mini_thumb)) %>
-                    <%= link_to 'Delete', image_path(image.object.id), :method => :delete%>
+                    <%= link_to 'Delete', admin_image_path(image.object.id), :method => :delete%>
                   </div>
 
                <% end %>

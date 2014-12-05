@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe ImagesController do
+describe Admin::ImagesController do
 
   before(:each) do
     session[:user_id] = 1

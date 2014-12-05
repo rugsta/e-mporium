@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe ProductsController do
+describe Admin::ProductsController do
 
   before(:each) do
     session[:user_id] = 1

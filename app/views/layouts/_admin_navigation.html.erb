@@ -1,10 +1,10 @@
 <div id="admin-navigation" class="span10 offset1 offset1">
 
     <ul id="pills" class="nav nav-pills">
-      <li><%= link_to 'Add Product', new_product_path%></li>
-      <li><%= link_to "Products", products_path%></li>
-      <li><%= link_to 'Categories', categories_path%></li>
-      <li><%= link_to 'Users', users_path%></li>
+      <li><%= link_to 'Add Product', new_admin_product_path%></li>
+      <li><%= link_to "Products", admin_products_path%></li>
+      <li><%= link_to 'Categories', admin_categories_path%></li>
+      <li><%= link_to 'Users', admin_users_path%></li>
       <li class="inline-nav-user">Current User : <%= session[:name] %></li>
       <li><%= link_to 'Log Out', session_path(session[:user_id]), :method => :delete%></li>
     </ul>

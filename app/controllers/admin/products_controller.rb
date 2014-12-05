@@ -1,4 +1,4 @@
-class ProductsController < ApplicationController
+class Admin::ProductsController < ApplicationController
 
   before_filter :active_categories, :only => [:new, :edit, :create, :update]
 
@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.create(product_params)
     if @product.save
-      redirect_to(products_path)
+      redirect_to(admin_products_path)
     else
       flash.now[:error] = "Your form has some errors."
       render :new
@@ -24,7 +24,7 @@ class ProductsController < ApplicationController
   def destroy
     @product = Product.find(params[:id])
     @product.delete
-    redirect_to(products_path)
+    redirect_to(admin_products_path)
   end
 
   def show
@@ -52,7 +52,7 @@ class ProductsController < ApplicationController
     end
 
     if @product.update(params)
-      redirect_to(edit_product_path)
+      redirect_to(edit_admin_product_path)
     else
       flash.now[:error] = "Your form has some errors."
       render :edit

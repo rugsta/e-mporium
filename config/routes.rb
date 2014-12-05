@@ -3,12 +3,17 @@ Todo::Application.routes.draw do
 
   root 'store#index', as: 'store'
 
-  resources :products
-  resources :categories
+  namespace :admin do
+    resources :products, :categories, :users
+    resources :images, only: [:edit, :update, :destroy]
+  end
+
+  #resources :products
+  #resources :categories
   resources :store
-  resources :users
+  #resources :users
   resources :sessions
-  resources :images, only: [:edit, :update, :destroy]
+  #resources :images, only: [:edit, :update, :destroy]
 
 
   # The priority is based upon order of creation: first created -> highest priority.

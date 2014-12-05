@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe UsersController do
+describe Admin::UsersController do
 
   before(:each) do
     session[:user_id] = 1

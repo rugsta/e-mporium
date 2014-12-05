@@ -3,8 +3,9 @@ require 'spec_helper'
 def login
 
     page.set_rack_session(:user_id => 1)
-    visit '/products'
+    visit admin_products_path
 
+    #KEPT FOR ANY LOGIN DEBUGGING
     #user = FactoryGirl.create(:user)
     #visit '/sessions/new'
     #

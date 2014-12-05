@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
     elsif user and user.authenticate(params[:sessions][:password])
       session[:user_id] = user.id
       session[:name] = user.name
-      redirect_to(products_path)
+      redirect_to(admin_products_path)
     else
       flash[:error] = "Invalid email and/or password."
       redirect_to(new_session_path)

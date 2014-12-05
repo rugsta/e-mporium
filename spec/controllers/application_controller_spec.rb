@@ -4,7 +4,7 @@ describe ApplicationController do
   controller do
     def index
       if session[:user_id] = 1
-        redirect_to products_path
+        redirect_to admin_products_path
       else
         redirect_to new_session_path
       end
@@ -26,7 +26,7 @@ describe ApplicationController do
       it "renders the index page when the session id is valid" do
         session[:user_id] = 1
         get :index
-        expect(response).to redirect_to("/products")
+        expect(response).to redirect_to(admin_products_path)
       end
 
     end
