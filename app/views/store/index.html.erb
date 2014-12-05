@@ -8,7 +8,8 @@
     <div class="col-md-3">
       <% @active_categories.each do |c| %>
           <div class="list-group">
-            <div class="list-group-item"><%= link_to c.category_name, store_path(:category_id => c.id) %></div>
+
+            <div><%= link_to(c.category_name, store_path(:category_id => c.id), :method => :GET, :class =>'list-group-item') %></div>
 
           </div>
       <% end %>
@@ -43,8 +44,12 @@
             <h3><%= p.product_name %></h3>
             <p><%= p.note%></p>
 
-            <p><%= number_to_currency(p.price)%> </p>
-            <p><a href="#" class="btn btn-primary" role="button">Buy Now</a></p>
+            <h3><%= number_to_currency(p.price)%></h3>
+
+            <%= link_to('More Info', product_information_path(p.id), :method => :GET, :class => 'btn btn-default') %>
+            <a href="#" class="btn btn-primary" role="button">Buy Now</a>
+
+
           </div>
         </div>
 

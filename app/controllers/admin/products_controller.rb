@@ -52,7 +52,7 @@ class Admin::ProductsController < ApplicationController
     end
 
     if @product.update(params)
-      redirect_to(edit_admin_product_path)
+      redirect_to(admin_products_path)
     else
       flash.now[:error] = "Your form has some errors."
       render :edit

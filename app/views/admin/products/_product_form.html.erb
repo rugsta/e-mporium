@@ -3,7 +3,7 @@
 
 <div class="row padded-form" style="float:left; margin-left: -40px;">
     <!--Because products is namespaced, simple_form needs helping out as the the url and path to post to.-->
-    <%= simple_form_for @product, url: admin_products_path, :html => { :multipart => true, :method => :POST } do |form| %>
+    <%= simple_form_for([:admin, @product], :html => { :multipart => true }) do |form| %>
     <form>
 
         <div class="container" style="width:750px;">
