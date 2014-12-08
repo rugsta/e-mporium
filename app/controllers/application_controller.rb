@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :authorize
+  before_action :get_active_categories
 
   protected
 
@@ -13,6 +14,10 @@ class ApplicationController < ActionController::Base
       flash[:error] = "Unauthorised path. Please log in."
       redirect_to(new_session_path)
     end
+  end
+
+  def get_active_categories
+    @active_categories = Category.where('active' => true).all
   end
 
 end

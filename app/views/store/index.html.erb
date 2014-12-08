@@ -23,7 +23,7 @@
       <div class="col-md-6">
 
 
-        <div class="thumb">
+        <div class="thumbnail">
 
           <% imageArray = Array.new
              x = 0
@@ -42,7 +42,7 @@
 
           <div class="caption" id="product_description">
             <h3><%= p.product_name %></h3>
-            <p><%= p.note%></p>
+            <p><%= p.note.truncate(150)%></p>
 
             <h3><%= number_to_currency(p.price)%></h3>
 
@@ -60,4 +60,5 @@
 
  </div>
 </div>
+
 

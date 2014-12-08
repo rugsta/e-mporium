@@ -6,11 +6,11 @@ class StoreController < ApplicationController
 
     if params[:category_id]
       @products = Product.where(:category_id => params[:category_id])
-      @active_categories = Category.where('active' => true).all
+      get_active_categories
       @images = Image.all
     else
       @products = Product.joins(:category).where(:categories => {:active => true}).order(:category_id)
-      @active_categories = Category.where('active' => true).all
+      get_active_categories
       @images = Image.all
     end
 

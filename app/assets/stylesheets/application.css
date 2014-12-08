@@ -27,3 +27,26 @@
 
 
 
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+.wrapper {
+    padding-top: -4em;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -4em;
+}
+.footer, .push {
+    height: 6em;
+}
+.footer, .push {
+    clear: both;
+}
+
+
+
+

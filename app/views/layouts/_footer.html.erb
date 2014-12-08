@@ -1,0 +1,26 @@
+<div style="padding-top: 2em;"></div>
+<div class="panel-footer">
+    <div class="wrapper">
+        <div class="push"></div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <div class="col-md-2">
+
+            </div>
+
+            <div class="col-md-6">
+                Categories
+                <% @active_categories.each do |c| %>
+
+                  <div>
+                    <%= link_to(c.category_name, store_path(:category_id => c.id), :method => :GET) %>
+                    <% end %>
+                  </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
