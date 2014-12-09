@@ -13,7 +13,7 @@
     <% end %>
   </div>
 
-  <div class="col-md-6">
+  <div class="col-md-5">
     <div class="thumb">
 
       <% imageArray = Array.new
@@ -21,23 +21,35 @@
          @images.each do |pimage|
            imageArray << pimage
          end
+
       %>
-      <%  while x < imageArray.length do%>
-          <a href="<%= imageArray[x].image.url(:retina) %>" data-lightbox="Product_<%= @product.id %>">
 
-            <%= image_tag(imageArray[x].image.url(:mini_thumb)) %>
 
-      <%   x = x +1
-           end %> </a>
+      <% if imageArray.length == 0 %>
+          <img src="/system/images/not_available/product-images-not-available-img_retina.jpg">
+      <% else %>
+
+              <%  while x < imageArray.length do%>
+                  <a href="<%= imageArray[x].image.url(:retina) %>" data-lightbox="Product_<%= @product.id %>">
+
+
+                    <%= image_tag(imageArray[x].image.url(:preview)) %>
+
+              <%   x = x +1
+                   end %></a>
+
+      <% end %>
 
       <div class="caption" id="product_description">
         <h3><%= @product.product_name %></h3>
         <p><%= @product.note%></p>
 
-        <h3><%= number_to_currency(@product.price)%> </h3>
-        <p><a href="#" class="btn btn-primary" role="button">Buy Now</a></p>
+        <span class="product_price"><%= number_to_currency(@product.price)%></span>
+        <span class="product_buttons"><a href="#" class="btn btn-primary" role="button">Buy Now</a></span>
       </div>
     </div>
   </div>
 
 </div>
+
+

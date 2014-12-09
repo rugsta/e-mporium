@@ -25,8 +25,7 @@
     font-weight: bold;
 }
 
-
-
+/*Footer Components */
 * {
     margin: 0;
 }
@@ -46,6 +45,35 @@ html, body {
 .footer, .push {
     clear: both;
 }
+
+/*Carousel Components */
+.item{
+    background: #333;
+    text-align: center;
+    height: 300px !important;
+}
+.carousel{
+    margin-top: 20px;
+}
+.bs-example{
+    margin: 20px;
+}
+
+/*View products*/
+.product_price{
+    font-weight: bold;
+    font-size: 36px;
+    padding-right: 10px;
+    line-height: 90%"
+}
+
+.product_buttons{
+    position:relative;
+    bottom:8px
+}
+
+
+
 
 
 

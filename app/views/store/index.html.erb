@@ -22,8 +22,8 @@
 
       <div class="col-md-6">
 
-
         <div class="thumbnail">
+
 
           <% imageArray = Array.new
              x = 0
@@ -31,23 +31,77 @@
                 imageArray << pimage
              end
           %>
-          <%  while x < imageArray.length do%>
-            <a href="<%= imageArray[x].image.url(:retina) %>" data-lightbox="Product_<%= p.id %>">
 
 
-               <%= image_tag(imageArray[x].image.url(:mini_thumb)) %>
 
-          <%   x = x +1
-               end %> </a>
+          <div class="bs-example">
+            <div id="myCarousel-<%=p.id%>" class="carousel slide" data-interval="0" data-ride="carousel">
+              <!-- Carousel items -->
+              <div class="carousel-inner">
+                <div class="active item">
+
+                  <% if imageArray.length == 0 %>
+                      <img src="/system/images/not_available/product-images-not-available-img_preview.jpg">
+                  <% else %>
+                      <img src="<%= imageArray[x].image.url(:thumb) %>">
+                  <% end %>
+                </div>
+
+
+
+                <% if imageArray.length > 1
+                    x=1
+                    while x < imageArray.length do
+
+                %>
+                        <div class="item">
+                          <img src="<%= imageArray[x].image.url(:thumb) %>">
+                        </div>
+                    <%   x = x +1
+                         end %>
+                <% end %>
+
+              </div>
+
+              <% if imageArray.length > 1 %>
+              <!-- Carousel nav -->
+              <a class="carousel-control left" href="#myCarousel-<%=p.id%>" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+              </a>
+              <a class="carousel-control right" href="#myCarousel-<%=p.id%>" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+              </a>
+              <% end %>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
           <div class="caption" id="product_description">
             <h3><%= p.product_name %></h3>
             <p><%= p.note.truncate(150)%></p>
 
-            <h3><%= number_to_currency(p.price)%></h3>
+            <span class="product_price"><%= number_to_currency(p.price)%></span>
 
-            <%= link_to('More Info', product_information_path(p.id), :method => :GET, :class => 'btn btn-default') %>
-            <a href="#" class="btn btn-primary" role="button">Buy Now</a>
+            <span class="product_buttons"><%= link_to('More Info', product_information_path(p.id), :method => :GET, :class => 'btn btn-default') %></span>
+            <span class="product_buttons"><a href="#" class="btn btn-primary" role="button">Buy Now</a></span>
+
+
+
+
+
+
+
 
 
           </div>

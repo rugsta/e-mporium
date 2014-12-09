@@ -6,7 +6,7 @@ class Image < ActiveRecord::Base
                     :url => "/system/:attachment/:id/:basename_:style.:extension",
                     :styles => {
                         :mini_thumb => ['100x100#',  :jpg, :quality => 70],
-                        :thumb      => ['300x300#',  :jpg, :quality => 70],
+                        :thumb      => ['350x300#',  :jpg, :quality => 70],
                         :preview    => ['480x480#',  :jpg, :quality => 70],
                         :large      => ['600>',      :jpg, :quality => 70],
                         :retina     => ['1200>',     :jpg, :quality => 30]
