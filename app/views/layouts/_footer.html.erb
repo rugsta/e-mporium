@@ -6,21 +6,36 @@
 
     <div class="footer">
         <div class="container">
-            <div class="col-md-2">
+            <div class="col-md-3">
 
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-3">
                 Categories
-                <% @active_categories.each do |c| %>
+
 
                   <div>
-                    <%= link_to(c.category_name, store_path(:category_id => c.id), :method => :GET) %>
+                    <% @active_categories.each do |c| %>
+                    <%= link_to(c.category_name, store_path(:category_id => c.id), :method => :GET) %></br>
                     <% end %>
                   </div>
+             </div>
+
+             <div class="col-md-3">
+               Admin
+
+
+                   <div>
+                     <a href="/sessions/new">Login</a>
+                   </div>
+
+               </div>
+             </div>
+
             </div>
 
         </div>
     </div>
 </div>
+
 

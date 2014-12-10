@@ -30,13 +30,22 @@
       <% else %>
 
               <%  while x < imageArray.length do%>
+
+                  <% if x == 0 %>
                   <a href="<%= imageArray[x].image.url(:retina) %>" data-lightbox="Product_<%= @product.id %>">
+                        <%= image_tag(imageArray[x].image.url(:preview)) %></a>
+                  <% x = x +1
+                     else
+                       puts imageArray.length
+                       puts x
+                       puts "hello" %>
 
+                  <a class ="hidden" href="<%= imageArray[x].image.url(:retina) %>" data-lightbox="Product_<%= @product.id %>"></a>
+                  <img class="hidden" src="<%=imageArray[x].image.url(:preview) %>">
 
-                    <%= image_tag(imageArray[x].image.url(:preview)) %>
-
-              <%   x = x +1
-                   end %></a>
+                  <% x = x +1
+                     end %>
+              <% end %>
 
       <% end %>
 
