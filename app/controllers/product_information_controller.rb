@@ -5,7 +5,7 @@ class ProductInformationController < ApplicationController
   def show
     @product = Product.find(params[:id])
 
-    @active_categories = Category.where('active' => true).all
+    get_active_categories
     @images = Image.where('product_id' => params[:id])
   end
 
