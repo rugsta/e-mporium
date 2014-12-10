@@ -1,7 +1,8 @@
 <div class="container">
 
   <div class="page-header">
-    <h1>Product header</h1>
+    <% @x = @active_categories.find(@product.category_id) %>
+    <h1><%= @x.category_name%></h1>
   </div>
 
 
@@ -32,18 +33,13 @@
               <%  while x < imageArray.length do%>
 
                   <% if x == 0 %>
-                  <a href="<%= imageArray[x].image.url(:retina) %>" data-lightbox="Product_<%= @product.id %>">
+                        <a href="<%= imageArray[x].image.url(:retina) %>" data-lightbox="Product_<%= @product.id %>">
                         <%= image_tag(imageArray[x].image.url(:preview)) %></a>
-                  <% x = x +1
-                     else
-                       puts imageArray.length
-                       puts x
-                       puts "hello" %>
-
-                  <a class ="hidden" href="<%= imageArray[x].image.url(:retina) %>" data-lightbox="Product_<%= @product.id %>"></a>
-                  <img class="hidden" src="<%=imageArray[x].image.url(:preview) %>">
-
-                  <% x = x +1
+                        <% x = x +1
+                     else %>
+                        <a class ="hidden" href="<%= imageArray[x].image.url(:retina) %>" data-lightbox="Product_<%= @product.id %>"></a>
+                        <img class="hidden" src="<%=imageArray[x].image.url(:preview) %>">
+                        <% x = x +1
                      end %>
               <% end %>
 

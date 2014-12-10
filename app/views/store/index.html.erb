@@ -1,7 +1,12 @@
 <div class="container">
 
     <div class="page-header">
-      <h1>Product header</h1>
+      <% if params[:category_id]
+            @x = @active_categories.find(params[:category_id])%>
+            <h1><%= @x.category_name%></h1>
+      <%else%>
+            <h1>Product header</h1>
+      <%end%>
     </div>
 
 
