@@ -16,4 +16,4 @@ describe 'FEATURE Store Front Category Listings', js: true do
     expect(page).not_to have_css('#product_description', :text => 'Factory Girl Created Product 2')
   end
 
-end        clci
+end
