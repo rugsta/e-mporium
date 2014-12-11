@@ -1,4 +1,4 @@
-  class Admin::UsersController < ApplicationController
+class Admin::UsersController < ApplicationController
 
   @change_pwd = false
   before_filter :all_users, :only => [:index, :create, :edit, :update]

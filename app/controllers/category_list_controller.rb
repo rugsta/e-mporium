@@ -12,9 +12,6 @@ class CategoryListController < ApplicationController
       @images = Image.all
       #TODO limit image loading to products shown
 
-
-
-
     #else
     #  @products = Product.joins(:category).where(:categories => {:active => true}).order(:category_id)
     #end
