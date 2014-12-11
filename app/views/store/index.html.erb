@@ -1,12 +1,7 @@
 <div class="container">
 
     <div class="page-header">
-      <% if params[:category_id]
-            @x = @active_categories.find(params[:category_id])%>
-            <h1><%= @x.category_name%></h1>
-      <%else%>
-            <h1>Product header</h1>
-      <%end%>
+            <h1></h1>
     </div>
 
 
@@ -14,7 +9,7 @@
       <% @active_categories.each do |c| %>
           <div class="list-group">
 
-            <div><%= link_to(c.category_name, store_path(:category_id => c.id), :method => :GET, :class =>'list-group-item') %></div>
+            <div><%= link_to(c.category_name, category_list_path(c.id), :class =>'list-group-item') %></div>
 
           </div>
       <% end %>
@@ -22,100 +17,7 @@
 
   <div class="col-md-9">
 
-    <div class="row">
-      <% @products.each do |p| %>
 
-      <div class="col-md-6">
-
-        <div class="thumbnail">
-
-
-          <% imageArray = Array.new
-             x = 0
-             @images.where(:product_id => p.id).each do |pimage|
-                imageArray << pimage
-             end
-          %>
-
-
-
-          <div class="bs-example">
-            <div id="myCarousel-<%=p.id%>" class="carousel slide" data-interval="0" data-ride="carousel">
-              <!-- Carousel items -->
-              <div class="carousel-inner">
-                <div class="active item">
-
-                  <% if imageArray.length == 0 %>
-                      <img src="/system/images/not_available/product-images-not-available-img_preview.jpg">
-                  <% else %>
-                      <img src="<%= imageArray[x].image.url(:thumb) %>">
-                  <% end %>
-                </div>
-
-
-
-                <% if imageArray.length > 1
-                    x=1
-                    while x < imageArray.length do
-
-                %>
-                        <div class="item">
-                          <img src="<%= imageArray[x].image.url(:thumb) %>">
-                        </div>
-                    <%   x = x +1
-                         end %>
-                <% end %>
-
-              </div>
-
-              <% if imageArray.length > 1 %>
-              <!-- Carousel nav -->
-              <a class="carousel-control left" href="#myCarousel-<%=p.id%>" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-              </a>
-              <a class="carousel-control right" href="#myCarousel-<%=p.id%>" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-              </a>
-              <% end %>
-            </div>
-          </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-          <div class="caption" id="product_description">
-            <h3><%= p.product_name %></h3>
-            <p><%= p.note.truncate(150)%></p>
-
-            <span class="product_price"><%= number_to_currency(p.price)%></span>
-
-            <span class="product_buttons"><%= link_to('More Info', product_information_path(p.id), :method => :GET, :class => 'btn btn-default') %></span>
-            <span class="product_buttons"><a href="#" class="btn btn-primary" role="button">Buy Now</a></span>
-
-
-
-
-
-
-
-
-
-          </div>
-        </div>
-
-      </div>
-
-      <%end%>
-   </div>
 
  </div>
 </div>

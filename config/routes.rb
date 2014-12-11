@@ -8,6 +8,7 @@ Todo::Application.routes.draw do
   end
 
   resources :store
+  resources :category_list
   resources :product_information
   resources :sessions
 
