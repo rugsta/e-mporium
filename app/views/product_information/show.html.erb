@@ -1,3 +1,7 @@
+<% flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, class: name %>
+<% end -%>
+
 <div class="container">
 
   <div class="page-header">
@@ -50,7 +54,9 @@
         <p><%= @product.note%></p>
 
         <span class="product_price"><%= number_to_currency(@product.price)%></span>
-        <span class="product_buttons"><a href="#" class="btn btn-primary" role="button">Buy Now</a></span>
+        <span class="product_buttons"><%=link_to('Buy Now', "/carts/#{@product.id}", :method => :POST, :class => 'btn btn-primary')%></span>
+
+
       </div>
     </div>
   </div>
