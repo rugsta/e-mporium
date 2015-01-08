@@ -11,7 +11,7 @@ Todo::Application.routes.draw do
   resources :category_list
   resources :product_information
   #resources :cart
-  post    'carts/:id' => 'carts#create'
+  post      'carts/:id' => 'carts#create'
   delete  'carts'     => 'carts#delete'
   resources :sessions
 
