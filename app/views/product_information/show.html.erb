@@ -6,14 +6,14 @@
 
   <div class="page-header">
     <% @x = @active_categories.find(@product.category_id) %>
-    <h1><%= @x.category_name%></h1>
+    <h1><%= @x.category_name%></h1> <%= render "/layouts/cart"%>
   </div>
 
 
   <div class="col-md-3">
     <% @active_categories.each do |c| %>
         <div class="list-group">
-          <div><%= link_to(c.category_name, store_path(:category_id => c.id), :method => :GET, :class =>'list-group-item') %></div>
+          <div><%= link_to(c.category_name, category_list_path(c.id), :method => :GET, :class =>'list-group-item') %></div>
         </div>
     <% end %>
   </div>

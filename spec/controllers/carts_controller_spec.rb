@@ -2,6 +2,10 @@ require 'spec_helper'
 
 describe CartsController do
 
+  before(:each) do
+    request.env["HTTP_REFERER"] = "/category_list/1"
+  end
+
   describe 'POST #create' do
 
     it 'generates and activation code if one does not exist' do
@@ -12,6 +16,7 @@ describe CartsController do
     end
 
     it 'generates a cart if required' do
+      request.env["HTTP_REFERER"] = "/category_list/1"
       Product_to_add_to_cart_1 = FactoryGirl.create(:product, :with_id)
       post :create, :id => Product_to_add_to_cart_1.id
       expect(Cart.count).to eq(1)

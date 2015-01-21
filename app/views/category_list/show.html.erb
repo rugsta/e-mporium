@@ -1,7 +1,7 @@
 <div class="container">
 
   <div class="page-header">
-    <h1><%= @current_category_list.category_name%></h1>
+    <h1><%= @current_category_list.category_name%></h1><%= render "/layouts/cart"%>
   </div>
 
 
@@ -94,7 +94,7 @@
                 <span class="product_price"><%= number_to_currency(p.price)%></span>
 
                 <span class="product_buttons"><%= link_to('More Info', product_information_path(p.id), :method => :GET, :class => 'btn btn-default') %></span>
-                <span class="product_buttons"><a href="#" class="btn btn-primary" role="button">Buy Now</a></span>
+                <span class="product_buttons"><%=link_to('Buy Now', "/carts/#{p.id}", :method => :POST, :class => 'btn btn-primary')%></span>
 
 
 

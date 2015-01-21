@@ -1,4 +1,4 @@
-class SessionsController < ApplicationController
+  class SessionsController < ApplicationController
   #require 'ruby-debug';debugger
 
   skip_before_action :authorize
