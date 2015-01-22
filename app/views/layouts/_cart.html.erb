@@ -1,11 +1,4 @@
 
 <% if @lineItemCount %>
-<div>
-  <table>
-    <tr>
-      <td>You have <%= @lineItemCount%> item(s) in your cart. Total $<%=number_with_precision(@lineItemCost, precision: 2) %></td>
-    </tr>
-
-</table>
-</div>
+<div>You have <%= @lineItemCount%> item(s) in your cart</br> Total $<%=number_with_precision(@lineItemCost, precision: 2) %></div>
 <%end%>

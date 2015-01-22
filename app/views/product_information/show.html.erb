@@ -4,9 +4,12 @@
 
 <div class="container">
 
-  <div class="page-header">
+  <div class="container-fluid page-header" style="position: relative;" id="product_information_show">
+
     <% @x = @active_categories.find(@product.category_id) %>
-    <h1><%= @x.category_name%></h1> <%= render "/layouts/cart"%>
+    <div class="col-xs-6 .col-sm-3"><h1><%= @x.category_name%></h1></div>
+    <div class="col-xs-6 .col-sm-3" style="position: absolute; bottom: 24%; text-align: right; width: 97%;"><%= render "/layouts/cart"%></div>
+
   </div>
 
 
@@ -53,7 +56,7 @@
         <h3><%= @product.product_name %></h3>
         <p><%= @product.note%></p>
 
-        <span class="product_price"><%= number_to_currency(@product.price)%></span>
+        <span class="product_customer_price"><%= number_to_currency(@product.price)%></span>
         <span class="product_buttons"><%=link_to('Buy Now', "/carts/#{@product.id}", :method => :POST, :class => 'btn btn-primary')%></span>
 
 

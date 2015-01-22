@@ -1,9 +1,10 @@
 <div class="container">
 
-  <div class="page-header">
-    <h1><%= @current_category_list.category_name%></h1><%= render "/layouts/cart"%>
-  </div>
+  <div class="container-fluid page-header" style="position: relative;" id="category_list_show">
 
+    <div class="col-xs-6 .col-sm-3"><h1><%= @current_category_list.category_name%></h1></div>
+    <div class="col-xs-6 .col-sm-3" style="position: absolute; bottom: 24%; text-align: right; width: 97%;"><%= render "/layouts/cart"%></div>
+  </div>
 
   <div class="col-md-3">
     <% @active_categories.each do |c| %>
@@ -91,7 +92,7 @@
                 <h3><%= p.product_name %></h3>
                 <p><%= p.note.truncate(150)%></p>
 
-                <span class="product_price"><%= number_to_currency(p.price)%></span>
+                <span class="product_customer_price"><%= number_to_currency(p.price)%></span>
 
                 <span class="product_buttons"><%= link_to('More Info', product_information_path(p.id), :method => :GET, :class => 'btn btn-default') %></span>
                 <span class="product_buttons"><%=link_to('Buy Now', "/carts/#{p.id}", :method => :POST, :class => 'btn btn-primary')%></span>

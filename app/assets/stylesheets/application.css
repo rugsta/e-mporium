@@ -13,6 +13,20 @@
  *= require_tree .
  */
 
+.container{
+    padding-left: 0px !important;
+}
+
+.page-header{
+    margin-top:0px !important;
+    margin-bottom:40px !important;
+    border-bottom-width: 0px !important;
+}
+
+.h1{
+    line-height: 500px;
+}
+/*Admin Components*/
 .inline-nav-user
 {
     line-height: 2.8;
@@ -60,7 +74,7 @@ html, body {
 }
 
 /*View products*/
-.product_price{
+.product_customer_price{
     font-weight: bold;
     font-size: 36px;
     padding-right: 10px;
@@ -69,9 +83,13 @@ html, body {
 
 .product_buttons{
     position:relative;
-    bottom:8px
+    bottom:8px;
 }
 
+/*Mini-Cart*/
+.mini-cart{
+
+}
 
 
 
