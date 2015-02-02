@@ -1,4 +1,5 @@
 
 <% if @lineItemCount %>
-<div id="mini-cart">You have <%= @lineItemCount%> item(s) in your cart</br> Total $<%=number_with_precision(@lineItemCost, precision: 2) %></div>
+<div id="mini-cart">You have <%= @lineItemCount%> item(s) in your cart</br>
+        <%= link_to 'Total $' + number_with_precision(@lineItemCost, precision: 2), "/carts/#{@myCart.id}", :method => :GET%></div>
 <%end%>

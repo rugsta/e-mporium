@@ -22,11 +22,11 @@ class ApplicationController < ActionController::Base
   end
 
   def show_mini_cart
-    myCart = Cart.find_by user_id:(cookies[:store_user])
+    @myCart = Cart.find_by_user_id(cookies[:store_user])
 
-    if myCart
-      @lineItemCount = myCart.cart_line_items.count
-      @lineItemCost = myCart.cart_line_items.collect { |cli| cli.product.price }.sum.to_f
+    if @myCart
+      @lineItemCount = @myCart.cart_line_items.count
+      @lineItemCost = @myCart.cart_line_items.collect { |cli| cli.product.price }.sum.to_f
     end
   end
 
