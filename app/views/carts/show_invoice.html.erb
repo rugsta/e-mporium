@@ -1,0 +1,94 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6"></div>
+    <div class="col-xs-6 text-right">
+      <h1><small>Invoice #001</small></h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-5">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4>From: Newco</h4>
+        </div>
+        <div class="panel-body">
+            Level 4, Flinders Street <br>
+            Melbourne <br>
+            3000
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-5 col-xs-offset-2 text-right">
+
+    </div>
+  </div>
+  <!-- / end client details section -->
+
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th>
+        <h5>Remove</h5>
+      </th>
+      <th>
+        <h5>Description</h5>
+      </th>
+      <th>
+        <h5>Qty</h5>
+      </th>
+      <th>
+        <h5>Price</h5>
+      </th>
+    </tr>
+    </thead>
+
+
+    <% @my_cart.cart_line_items.each do |cli|%>
+        <tbody>
+        <tr>
+          <td><%= link_to 'Delete', "/carts/delete_item_from_cart/#{cli.id}", :method => :POST %></td>
+          <td><%= cli.product.product_name %></td>
+          <td class="text-right">1</td>
+          <td class="text-right"><%= cli.product.price %></td>
+        </tr>
+        </tbody>
+    <%end%>
+
+  </table>
+
+
+
+  <div class="row text-right">
+    <div class="col-xs-2 col-xs-offset-8">
+      <p>
+        <strong>
+          Sub Total : <br>
+          Shipping : <br>
+          Total : <br>
+        </strong>
+      </p>
+    </div>
+    <div class="col-xs-2">
+      <strong>
+        $<%= @my_cart.cart_line_items.collect { |cli| cli.product.price }.sum.to_f %><br>
+        shipping_rate <br>
+        line_items_price + shipping_rate <br>
+      </strong>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-5">
+      <div>
+        <div>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-7">
+     Secure Payment by Paypal
+      </div>
+    </div>
+  </div>
+</div>

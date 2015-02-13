@@ -10,10 +10,10 @@ Todo::Application.routes.draw do
   resources :store
   resources :category_list
   resources :product_information
-  #resources :cart
-  post    'carts/:id' => 'carts#create'
-  get    'carts/:id' => 'carts#show'
-  delete  'carts'     => 'carts#delete'
+
+  post    'carts/add_to_cart/:id'           => 'carts#add_to_cart'
+  get     'carts'                           => 'carts#show_invoice'
+  post    'carts/delete_item_from_cart/:id' => 'carts#delete_item_from_cart'
   resources :sessions
 
 

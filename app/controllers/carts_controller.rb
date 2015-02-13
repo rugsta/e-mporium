@@ -2,11 +2,17 @@ class CartsController < ApplicationController
 
   skip_before_action :authorize
 
-  def create
 
+  def create
+    @cart = Cart.new
+    @cart.user_id = cookies[:store_user]
+    @cart.save!
+  end
+
+  def add_to_cart
     if cookies[:store_user].blank?
       generate_activation_code(50)
-      generate_cart
+      create
       generate_cart_line_item
       redirect_to(:back)
     else
@@ -14,11 +20,6 @@ class CartsController < ApplicationController
       generate_cart_line_item
       redirect_to(:back)
     end
-
-  end
-
-  def show
-      render :show
   end
 
   def generate_activation_code(size)
@@ -28,17 +29,21 @@ class CartsController < ApplicationController
     cookies[:store_user] = { :value => @store_user_id, :expires => 1.hour.from_now }
   end
 
-  def generate_cart
-    @cart = Cart.new
-    @cart.user_id = cookies[:store_user]
-    @cart.save!
-  end
-
   def generate_cart_line_item
     @cart_line_item = CartLineItem.new
     @cart_line_item.product_id = params[:id]
     @cart_line_item.cart_id = @cart.id
     @cart_line_item.save!
+  end
+
+  def show_invoice
+
+  end
+
+  def delete_item_from_cart
+    @line_item_to_delete = CartLineItem.find(params[:id])
+    @line_item_to_delete.delete
+    redirect_to(:back)
   end
 
 end

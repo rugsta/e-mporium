@@ -57,7 +57,7 @@
         <p><%= @product.note%></p>
 
         <span class="product_customer_price"><%= number_to_currency(@product.price)%></span>
-        <span class="product_buttons"><%=link_to('Buy Now', "/carts/#{@product.id}", :method => :POST, :class => 'btn btn-primary')%></span>
+        <span class="product_buttons"><%=link_to('Buy Now', "/carts/add_to_cart/#{@product.id}", :method => :POST, :class => 'btn btn-primary')%></span>
 
 
       </div>

@@ -95,7 +95,7 @@
                 <span class="product_customer_price"><%= number_to_currency(p.price)%></span>
 
                 <span class="product_buttons"><%= link_to('More Info', product_information_path(p.id), :method => :GET, :class => 'btn btn-default') %></span>
-                <span class="product_buttons"><%=link_to('Buy Now', "/carts/#{p.id}", :method => :POST, :class => 'btn btn-primary')%></span>
+                <span class="product_buttons"><%=link_to('Buy Now', "/carts/add_to_cart/#{p.id}", :method => :POST, :class => 'btn btn-primary')%></span>
 
 
 

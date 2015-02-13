@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   before_action :authorize
   before_action :get_active_categories
-  before_action :show_mini_cart
+  before_action :show_cart
 
   protected
 
@@ -21,13 +21,8 @@ class ApplicationController < ActionController::Base
     @active_categories = Category.where('active' => true).all
   end
 
-  def show_mini_cart
-    @myCart = Cart.find_by_user_id(cookies[:store_user])
-
-    if @myCart
-      @lineItemCount = @myCart.cart_line_items.count
-      @lineItemCost = @myCart.cart_line_items.collect { |cli| cli.product.price }.sum.to_f
-    end
+  def show_cart
+    @my_cart = Cart.find_by_user_id(cookies[:store_user])
   end
 
 end
