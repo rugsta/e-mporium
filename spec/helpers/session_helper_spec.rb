@@ -13,3 +13,12 @@ def login
     #fill_in('Password', :with => "qwerty")
     #click_button('Enter')
 end
+
+def cart
+
+  visit(category_list_path(1))
+
+  first(:link, "Buy Now").click
+  page.find_by_id('mini_cart_total').click
+
+end

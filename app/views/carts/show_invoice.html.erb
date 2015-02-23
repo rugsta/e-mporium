@@ -43,18 +43,24 @@
       </th>
     </tr>
     </thead>
-
-
-    <% @my_cart.cart_line_items.each do |cli|%>
         <tbody>
+
+    <% if @my_cart.cart_line_items.empty? %>
+        <tr>
+          <td colspan="4">There are no items in your cart</td>
+        </tr>
+
+    <% else
+        @my_cart.cart_line_items.each do |cli| %>
         <tr>
           <td><%= link_to 'Delete', "/carts/delete_item_from_cart/#{cli.id}", :method => :POST %></td>
           <td><%= cli.product.product_name %></td>
           <td class="text-right">1</td>
           <td class="text-right"><%= cli.product.price %></td>
         </tr>
+       <%end%>
+    <% end%>
         </tbody>
-    <%end%>
 
   </table>
 
@@ -72,7 +78,7 @@
     </div>
     <div class="col-xs-2">
       <strong>
-        $<%= @my_cart.cart_line_items.collect { |cli| cli.product.price }.sum.to_f %><br>
+        $<%= number_with_precision(@my_cart.cart_line_items.collect { |cli| cli.product.price }.sum.to_f, precision: 2) %><br>
         shipping_rate <br>
         line_items_price + shipping_rate <br>
       </strong>

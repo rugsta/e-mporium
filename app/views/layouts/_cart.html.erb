@@ -1,5 +1,5 @@
 
 <% if @my_cart %>
 <div id="mini-cart">You have <%= @line_item_count = @my_cart.cart_line_items.count %> item(s) in your cart</br>
-        <%= link_to 'Total $' + number_with_precision(@my_cart.cart_line_items.collect { |cli| cli.product.price }.sum.to_f, precision: 2), "/carts", :method => :GET%></div>
+        <%= link_to 'Total $' + number_with_precision(@my_cart.cart_line_items.collect { |cli| cli.product.price }.sum.to_f, precision: 2), "/carts", :method => :GET, :id => 'mini_cart_total'%></div>
 <%end%>

@@ -14,7 +14,7 @@ FactoryGirl.define do
       end
   end
 
-  trait :with_id do
+  trait :with_category_id do
     category_id 1
   end
 
