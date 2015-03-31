@@ -1,4 +1,4 @@
-require 'spec_helper'
+ require 'spec_helper'
 require 'helpers/session_helper_spec'
 
 
@@ -27,8 +27,9 @@ describe 'FEATURE cart and cart line items', js: true do
     first(:link, "Buy Now").click
 
     page.find_by_id('mini_cart_total').click
-    expect(page).to have_content('Invoice')
+    expect(page).to have_content("Invoice")
   end
+
 
   it 'delete a product from the cart' do
 
@@ -40,5 +41,7 @@ describe 'FEATURE cart and cart line items', js: true do
     expect(page).to have_content("There are no items in your cart")
 
   end
+
+
 
 end

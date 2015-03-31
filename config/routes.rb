@@ -1,4 +1,4 @@
-Todo::Application.routes.draw do
+Emporium::Application.routes.draw do
 
   root 'store#index', as: 'store'
 
@@ -10,10 +10,16 @@ Todo::Application.routes.draw do
   resources :store
   resources :category_list
   resources :product_information
+  resources :orders do
+                collection do
+                  get 'setup_checkout'
+                end
+  end
 
   post    'carts/add_to_cart/:id'           => 'carts#add_to_cart'
   get     'carts'                           => 'carts#show_invoice'
   post    'carts/delete_item_from_cart/:id' => 'carts#delete_item_from_cart'
+
   resources :sessions
 
 

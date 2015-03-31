@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141211042651) do
+ActiveRecord::Schema.define(version: 20150303051421) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,14 +19,17 @@ ActiveRecord::Schema.define(version: 20141211042651) do
   create_table "cart_line_items", force: true do |t|
     t.integer  "cart_id"
     t.integer  "product_id"
-    t.decimal  "product_price"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "carts", force: true do |t|
     t.string   "user_id"
-    t.boolean  "checked_out", default: false
+    t.string   "ip_address"
+    t.string   "express_tokenID"
+    t.string   "express_payerID"
+    t.boolean  "checked_out",     default: false
+    t.string   "invoiceNo"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -48,10 +51,33 @@ ActiveRecord::Schema.define(version: 20141211042651) do
     t.integer  "image_file_size"
   end
 
+  create_table "orders", force: true do |t|
+    t.integer  "cart_id"
+    t.string   "ip_address"
+    t.string   "transactionID"
+    t.string   "checkout_status"
+    t.string   "correlationID"
+    t.string   "version"
+    t.string   "build"
+    t.string   "transaction_type"
+    t.string   "payment_type"
+    t.string   "payment_date"
+    t.string   "payment_status"
+    t.string   "pending_reason"
+    t.string   "gross_amount_currency_id"
+    t.string   "gross_amount"
+    t.string   "fee_amount"
+    t.string   "net_amount"
+    t.string   "express_tokenID"
+    t.string   "secure_merchant_account_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "products", force: true do |t|
     t.string   "product_name"
     t.integer  "category_id"
-    t.string   "note"
+    t.text     "note"
     t.boolean  "archived"
     t.datetime "created_at"
     t.datetime "updated_at"

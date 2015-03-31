@@ -1,5 +1,13 @@
-Todo::Application.configure do
+Emporium::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+
+
+  #paypal-def
+  config.after_initialize do
+    ActiveMerchant::Billing::Base.mode = :test
+    ::EXPRESS_GATEWAY = ActiveMerchant::Billing::BogusGateway.new
+  end
+
 
   # Access to rack session
   config.middleware.use RackSessionAccess::Middleware

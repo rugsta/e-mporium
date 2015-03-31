@@ -80,7 +80,8 @@
       <strong>
         $<%= number_with_precision(@my_cart.cart_line_items.collect { |cli| cli.product.price }.sum.to_f, precision: 2) %><br>
         shipping_rate <br>
-        line_items_price + shipping_rate <br>
+        line_items_price + shipping_rate
+        <br>
       </strong>
     </div>
   </div>
@@ -93,8 +94,11 @@
       </div>
     </div>
     <div class="col-xs-7">
-     Secure Payment by Paypal
-      </div>
+
+
+      <%= link_to image_tag("https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif"), setup_checkout_orders_path %>
+
+    </div>
     </div>
   </div>
 </div>

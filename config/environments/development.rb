@@ -1,7 +1,20 @@
-Todo::Application.configure do
+Emporium::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   Paperclip.options[:command_path] = "/usr/local/bin/"
+
+
+  #Paypal-def
+  config.after_initialize do
+    ActiveMerchant::Billing::Base.mode = :test
+    paypal_options = {
+        :login => "adefconalert+e-mporium+seller_api2.gmail.com",
+        :password => "ZWDPJ68BAVSHH44T",
+        :signature => "ADXzQTSadfG8RKrd43Ub4cgtwfWDA5bNSlEgN1-I2u4NDZ14XavGvnA6"
+    }
+    ::EXPRESS_GATEWAY = ActiveMerchant::Billing::PaypalExpressGateway.new(paypal_options)
+  end
+
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development

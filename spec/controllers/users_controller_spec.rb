@@ -22,7 +22,7 @@ describe Admin::UsersController do
   end
 
   describe "POST #create" do
-    it "saves a user with valid attributes" do
+      it "saves a user with valid attributes" do
       to_match_user = FactoryGirl.build(:user)
       post :create, user: FactoryGirl.attributes_for(:user)
       expect(User.first.name).to eq(to_match_user.name)

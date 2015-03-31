@@ -233,17 +233,17 @@ body:after {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 5, /Users/sandy.cook/RubymineProjects/todo/app/assets/stylesheets/products.css.scss */
+/* line 5, /Users/sandy.cook/RubymineProjects/emporium/app/assets/stylesheets/products.css.scss */
 .form-group {
   padding-top: 3px;
 }
 
-/* line 10, /Users/sandy.cook/RubymineProjects/todo/app/assets/stylesheets/products.css.scss */
+/* line 10, /Users/sandy.cook/RubymineProjects/emporium/app/assets/stylesheets/products.css.scss */
 .padded-form {
   padding-left: 30px;
 }
 
-/* line 14, /Users/sandy.cook/RubymineProjects/todo/app/assets/stylesheets/products.css.scss */
+/* line 14, /Users/sandy.cook/RubymineProjects/emporium/app/assets/stylesheets/products.css.scss */
 .input {
   width: 300px;
 }

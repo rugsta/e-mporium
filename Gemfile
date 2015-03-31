@@ -2,13 +2,13 @@ source 'https://rubygems.org'
 
 gem 'rails_refactor'
 
-
 gem 'simple_form', github: 'plataformatec/simple_form'
 gem 'bcrypt'
 gem 'pry'
 gem 'pry-byebug'
-
+gem 'activemerchant'
 gem 'bcrypt-ruby'
+
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
   gem 'rspec-collection_matchers'
