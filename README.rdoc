@@ -10,29 +10,24 @@ Some testers like cucumber.
 I'm not a fan but appreciate its 'possiblities' if used as expected within an organisation.
 Because of this it will have an end to end smoke tests written with cucumber.
 I'm a software tester not a developer, this project is for personal development.
-I'm hoping the code does not make any developer too nauseous.
 
 * Ruby version
 Uses : Ruby 2.1.1p76
 Uses : Rails 4.1.0
 
+* Code Climate Coverage
+https://codeclimate.com/github/rugsta/e-mporium
+
 * System dependencies
+postgres (PostgreSQL) 9.3.5
 
 * Configuration
 
-Uses Postgres
 
 * Database initialization
 
 * How to run the test suite
-Uses rspec
-
-* Services (job queues, cache servers, search engines, etc.)
+rspec
 
 * Deployment instructions
 
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
