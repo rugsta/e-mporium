@@ -1,6 +1,7 @@
   source 'https://rubygems.org'
 
 gem 'rails_refactor'
+gem "codeclimate-test-reporter", group: :test, require: nil
 
 gem 'simple_form', github: 'plataformatec/simple_form'
 gem 'bcrypt'
