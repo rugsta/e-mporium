@@ -17,7 +17,7 @@ Uses : Rails 4.1.0
 
 * Code Climate Coverage
 https://codeclimate.com/github/rugsta/e-mporium
-[![Code Climate](https://codeclimate.com/github/rugsta/e-mporium/badges/gpa.svg)](https://codeclimate.com/github/rugsta/e-mporium)
+<a href="https://codeclimate.com/github/rugsta/e-mporium"><img src="https://codeclimate.com/github/rugsta/e-mporium/badges/coverage.svg" /></a>
 
 * System dependencies
 postgres (PostgreSQL) 9.3.5
