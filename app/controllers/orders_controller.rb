@@ -29,7 +29,7 @@ class OrdersController < ApplicationController
         :version          => @details.params["version"],
         :build            => @details.params["build"],
         :checkout_status  => @details.params["checkout_status"]
-    )
+     )
 
     do_purchase
     update_order
