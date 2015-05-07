@@ -31,13 +31,13 @@ class OrdersController < ApplicationController
         :checkout_status  => @details.params["checkout_status"]
      )
 
+
     do_purchase
     update_order
     express_token(params[:token])
     update_order
     customer_redirect
     do_validity_checks_and_finalise
-    #binding.pry
 
   end
   #==========================================================
@@ -69,7 +69,6 @@ class OrdersController < ApplicationController
     }
       @response = EXPRESS_GATEWAY.purchase(@my_cart.price_in_cents, do_purchase_credentials)
   end
-
 
   def update_order
     @order.update_attributes(

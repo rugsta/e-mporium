@@ -2,25 +2,23 @@
 
 Just another e-commerce shopping app, under construction.
 An investigation into learning rails, ruby and configuring CI and deployment servers.
+I'm a software tester not a developer, this project is for personal development.
+
 I've been testing rails apps for a few years, its about time I learnt more.
 The application utilises the software testing principles that as a system tester I expect from
 the developers I work with. Stuff like Controller, Model and Feature specs.
 
 Some testers like cucumber.
 I'm not a fan but appreciate its 'possiblities' if used as expected within an organisation.
-Because of this it will have an end to end smoke tests written with cucumber.
-I'm a software tester not a developer, this project is for personal development.
+Because of this it has an end to end smoke test written with cucumber.
 
-* Ruby version
-Uses : Ruby 2.1.1p76
-Uses : Rails 4.1.0
-
-* Code Climate Coverage
-https://codeclimate.com/github/rugsta/e-mporium
+* Codeclimate
 {<img src="https://codeclimate.com/github/rugsta/e-mporium/badges/coverage.svg" />}[https://codeclimate.com/github/rugsta/e-mporium]
 
 * System dependencies
-postgres (PostgreSQL) 9.3.5
+Ruby 2.1.1p76
+Rails 4.1.0
+Postgres (PostgreSQL) 9.3.5
 
 * Configuration
 
