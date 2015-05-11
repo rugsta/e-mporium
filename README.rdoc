@@ -1,5 +1,7 @@
 == README
 
+Test Push
+
 Just another e-commerce shopping app, under construction.
 An investigation into learning rails, ruby and configuring CI and deployment servers.
 I'm a software tester not a developer, this project is for personal development.
