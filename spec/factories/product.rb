@@ -10,7 +10,7 @@ FactoryGirl.define do
     category
     #association :image, factory: :image
     after(:product) do |i|
-      i.images << FactoryGirl.build(:image)
+      i.images << FactoryGirl.create(:image)
       end
   end
 
