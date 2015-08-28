@@ -5,7 +5,7 @@ def login
     #page.set_rack_session(:user_id => 1)
     #visit admin_products_path
 
-    KEPT FOR ANY LOGIN DEBUGGING
+    #KEPT FOR ANY LOGIN DEBUGGING
     user = FactoryGirl.create(:user)
     visit '/sessions/new'
 
