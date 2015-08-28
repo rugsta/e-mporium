@@ -19,7 +19,7 @@ end
 group :test do
   gem 'capybara'
   gem 'launchy'
-  gem 'selenium-webdriver'
+  gem 'selenium-webdriver', '>=2.45.0.dev3'
   gem 'database_cleaner'
   gem 'rack_session_access'
 end
