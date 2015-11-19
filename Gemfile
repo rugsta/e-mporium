@@ -24,8 +24,20 @@ group :test do
   gem 'rack_session_access'
 end
 
+  #from https://www.digitalocean.com/community/tutorials/deploying-a-rails-app-on-ubuntu-14-04-with-capistrano-nginx-and-puma
+  group :development do
+    gem 'capistrano',         require: false
+    gem 'capistrano-rvm',     require: false
+    gem 'capistrano-rails',   require: false
+    gem 'capistrano-bundler', require: false
+    gem 'capistrano3-puma',   require: false
+  end
 
-gem 'rmagick', '2.13.2'
+  gem 'puma'
+  #------------------------------------------------------------------------
+
+
+gem 'rmagick'
 gem 'paperclip', '~> 4.0'
 gem 'fileutils'
 
