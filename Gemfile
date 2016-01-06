@@ -19,9 +19,12 @@ end
 group :test do
   gem 'capybara'
   gem 'launchy'
-  gem 'selenium-webdriver', '>=2.45.0.dev3'
+  gem 'selenium-webdriver', '>=2.46.2'
   gem 'database_cleaner'
   gem 'rack_session_access'
+  gem 'watir-webdriver'
+  gem 'cucumber-rails', :require => false
+  gem 'cucumber'
 end
 
   #from https://www.digitalocean.com/community/tutorials/deploying-a-rails-app-on-ubuntu-14-04-with-capistrano-nginx-and-puma

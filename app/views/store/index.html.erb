@@ -5,7 +5,7 @@
       <% @active_categories.each do |c| %>
           <div class="list-group">
 
-            <div><%= link_to(c.category_name, category_list_path(c.id), :class =>'list-group-item') %></div>
+            <div name="<%= c.category_name%>"><%= link_to(c.category_name, category_list_path(c.id), :class =>'list-group-item') %></div>
 
           </div>
       <% end %>

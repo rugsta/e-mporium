@@ -1,4 +1,4 @@
- require 'spec_helper'
+require 'spec_helper'
 require 'helpers/session_helper_spec'
 
 
